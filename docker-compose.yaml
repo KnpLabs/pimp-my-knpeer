@@ -30,7 +30,7 @@ services:
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.nginx.rule=Host(`front.localhost`) &&
-        PathPrefix(`/images`)'
+        PathPrefix(`/Images`)'
     restart: unless-stopped
    
   app:
