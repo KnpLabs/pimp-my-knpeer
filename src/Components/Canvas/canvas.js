@@ -8,6 +8,7 @@ const Canvas = () => {
 
     return (
         <div className="canvas">
+            <img className="logo" src="/Images/logo.png" />
             {avatarKeys.map(key => <div key={ key } className={ `avatar-trait ` + key }>
                 {avatar.traits[key] && <img src={avatar.traits[key]} />}
             </div>)}
