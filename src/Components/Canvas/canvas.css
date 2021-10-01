@@ -3,6 +3,13 @@
     position: relative;
 }
 
+.canvas .logo {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+}
+
+
 .canvas .avatar-trait {
     position: absolute;
     top: 10rem;

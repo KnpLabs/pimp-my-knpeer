@@ -1,4 +1,6 @@
 .menu {
     width: 30%;
+    height: calc(100vh - (2rem + 2rem));
     padding: 2rem;
+    box-shadow: -2px 0 15px #dddddd;
 }

@@ -1,11 +1,12 @@
 .trait {
+    width: 20%;
     margin: 0.5em;
     padding: 0;
     background: none;
-    border: 1px solid #cfcfcf;
+    border: 1px solid #dddddd;
+    cursor: pointer;
 }
 
 .trait img {
-    width: 80px;
-    height: 80px;
+    width: 100%;
 }
