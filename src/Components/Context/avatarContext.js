@@ -5,18 +5,32 @@ const AvatarContext = createContext();
 
 export const AvatarProvider = ({children}) => {
     const [face, setFace] = useState(null)
+    const [eyes, setEyes] = useState(null)
+    const [body, setBody] = useState(null)
+    const [eyebrows, setEyebrows] = useState(null)
+    const [accessories, setAccessoires] = useState(null)
+    const [beard, setBeard] = useState(null)
+    const [hairs, setHair] = useState(null)
+    const [background, setBackground] = useState(null)
     const avatar = {
         traits: {
             face: face,
-            eyes: null,
-            eyebrows: null,
-            hair: null,
-            beard: null,
-            body: null,
-            accessories: null,
-            background: null,
+            eyes: eyes,
+            eyebrows: eyebrows,
+            hair: hairs,
+            beard: beard,
+            body: body,
+            accessories: accessories,
+            background: background,
         },
-        setFace
+        setFace,
+        setEyes,
+        setBody,
+        setEyebrows,
+        setAccessoires,
+        setBeard,
+        setHair,
+        setBackground
     }
 
     return (

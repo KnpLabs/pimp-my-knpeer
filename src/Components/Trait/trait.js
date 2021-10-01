@@ -1,6 +1,5 @@
 import React from 'react'
 import './trait.css'
-import { useAvatarContext } from '../Context/avatarContext'
 
 const Trait = ({name, setTrait, traits = []}) => {
     return (
