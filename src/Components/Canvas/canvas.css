@@ -4,17 +4,103 @@
     position: relative;
 }
 
-.canvas .logo {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    width: 30%;
-}
-
-
 .canvas .avatar-trait {
     position: absolute;
     top: 10rem;
     left: 10rem;
     right: 10rem;
+}
+
+.canvas .avatar-trait svg.pink1 path#color {
+    fill: #EFD7D0 !important;
+}
+
+.canvas .avatar-trait svg.pink2 path#color {
+    fill: #E8C6BF !important;
+}
+
+.canvas .avatar-trait svg.beige1 path#color {
+    fill: #E9DAC5 !important;
+}
+
+.canvas .avatar-trait svg.beige2 path#color {
+    fill: #DFB9A2 !important;
+}
+
+.canvas .avatar-trait svg.brown1 path#color {
+    fill: #A07256 !important;
+}
+
+.canvas .avatar-trait svg.brown2 path#color {
+    fill: #5C4430 !important;
+}
+
+.canvas .avatar-trait svg.blond path#color,
+.canvas .avatar-trait svg.blond path#color-2 {
+    fill: #c4a97c !important;
+}
+
+.canvas .avatar-trait svg.ginger path#color,
+.canvas .avatar-trait svg.ginger path#color-2 {
+    fill: #e07400 !important;
+}
+
+.canvas .avatar-trait svg.red path#color,
+.canvas .avatar-trait svg.red path#color-2 {
+    fill: #ab031d !important;
+}
+
+.canvas .avatar-trait svg.brown path#color,
+.canvas .avatar-trait svg.brown path#color-2 {
+    fill: #452900 !important;
+}
+
+.canvas .avatar-trait svg.black path#color,
+.canvas .avatar-trait svg.black path#color-2 {
+    fill: #000000 !important;
+}
+
+.canvas .avatar-trait svg.grey path#color,
+.canvas .avatar-trait svg.grey path#color-2 {
+    fill: #9c9a97 !important;
+}
+
+.canvas .avatar-trait svg.pink path#color {
+    fill: #a30a6e !important;
+}
+
+.canvas .avatar-trait svg.yellow path#color {
+    fill: #f2e01d !important;
+}
+
+.canvas .avatar-trait svg.green path#color {
+    fill: #39ad07 !important;
+}
+
+.canvas .avatar-trait svg.blue path#color {
+    fill: #0776ad !important;
+}
+
+.canvas .avatar-trait svg.light-blue circle#color {
+    fill: #f3f8ff !important;
+}
+
+.canvas .avatar-trait svg.light-pink circle#color {
+    fill: #f4d2e0 !important;
+}
+
+.canvas .avatar-trait svg.light-purple circle#color {
+    fill: #e6d4ff !important;
+}
+
+.canvas .avatar-trait svg.light-yellow circle#color {
+    fill: #fffee3 !important;
+}
+
+.canvas .avatar-trait svg.light-green circle#color {
+    fill: #dcffdb !important;
+}
+
+.canvas .avatar-trait svg.light-black circle#color {
+    fill: #454545 !important;
 }

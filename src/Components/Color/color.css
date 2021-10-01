@@ -1,0 +1,101 @@
+.colors {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+}
+
+.colors .color {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.colors .color.pink1 {
+    background: #EFD7D0;
+}
+
+.colors .color.pink2 {
+    background: #E8C6BF;
+}
+
+.colors .color.beige1 {
+    background: #E9DAC5;
+}
+
+.colors .color.beige2 {
+    background: #DFB9A2;
+}
+
+.colors .color.brown1 {
+    background: #A07256;
+}
+
+.colors .color.brown2 {
+    background: #5C4430;
+}
+
+.colors .color.blond {
+    background: #c4a97c;
+}
+
+.colors .color.ginger {
+    background: #e07400;
+}
+
+.colors .color.red {
+    background: #ab031d;
+}
+
+.colors .color.brown {
+    background: #452900;
+}
+
+.colors .color.black {
+    background: #000000;
+}
+
+.colors .color.grey {
+    background: #9c9a97;
+}
+
+.colors .color.pink {
+    background: #a30a6e;
+}
+
+.colors .color.yellow {
+    background: #f2e01d;
+}
+
+.colors .color.green {
+    background: #39ad07;
+}
+
+.colors .color.blue {
+    background: #0776ad;
+}
+
+.colors .color.light-blue {
+    background: #f3f8ff;
+}
+
+.colors .color.light-pink {
+    background: #f4d2e0;
+}
+
+.colors .color.light-purple {
+    background: #e6d4ff;
+}
+
+.colors .color.light-yellow {
+    background: #fffee3;
+}
+
+.colors .color.light-green {
+    background: #dcffdb;
+}
+
+.colors .color.light-black {
+    background: #454545;
+}

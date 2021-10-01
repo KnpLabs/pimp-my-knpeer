@@ -1,8 +1,16 @@
 .app {
+  position: relative;
   display: flex;
   justify-content: flex-end;
 }
 
 .hidden {
   display: none;
+}
+
+.logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 20%;
 }
