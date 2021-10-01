@@ -14,14 +14,14 @@ export const AvatarProvider = ({children}) => {
     const [background, setBackground] = useState(null)
     const avatar = {
         traits: {
+            background: background,
+            body: body,
             face: face,
             eyes: eyes,
             eyebrows: eyebrows,
             hair: hairs,
             beard: beard,
-            body: body,
             accessories: accessories,
-            background: background,
         },
         setFace,
         setEyes,

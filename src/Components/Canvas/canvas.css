@@ -17,4 +17,9 @@
     top: 10rem;
     left: 10rem;
     right: 10rem;
+    z-index: 1;
 }
+
+.canvas .avatar-layering-svg {
+    position: absolute;
+  }
