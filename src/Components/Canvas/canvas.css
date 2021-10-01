@@ -1,0 +1,11 @@
+.canvas {
+    width: 70%;
+    position: relative;
+}
+
+.canvas .avatar-trait {
+    position: absolute;
+    top: 10rem;
+    left: 10rem;
+    right: 10rem;
+}

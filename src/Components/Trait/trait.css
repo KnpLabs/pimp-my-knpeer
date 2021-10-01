@@ -1,0 +1,11 @@
+.trait {
+    margin: 0.5em;
+    padding: 0;
+    background: none;
+    border: 1px solid #cfcfcf;
+}
+
+.trait img {
+    width: 80px;
+    height: 80px;
+}
