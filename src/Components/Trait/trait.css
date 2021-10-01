@@ -1,12 +1,26 @@
-.trait {
+.traits {
+    position: relative;
+}
+
+.traits .chevron {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1em;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+.traits .selection .trait {
     width: 20%;
     margin: 0.5em;
     padding: 0;
+    position: relative;
     background: none;
     border: 1px solid #dddddd;
     cursor: pointer;
 }
 
-.trait img {
+.traits .selection .trait img {
     width: 100%;
 }
