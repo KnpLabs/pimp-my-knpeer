@@ -1,6 +1,5 @@
 import React from 'react'
 import './trait.css'
-import { useAvatarContext } from '../Context/avatarContext'
 
 const toggleTrait = traitName => {
     document.querySelector(`[data-is=${traitName}] .selection`).classList.toggle('hidden')
