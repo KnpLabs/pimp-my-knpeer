@@ -1,5 +1,10 @@
 .traits {
+    border-bottom:  1px solid #dddddd;
+}
+
+.traits .header {
     position: relative;
+    cursor: pointer;
 }
 
 .traits .chevron {
@@ -8,7 +13,10 @@
     right: 0;
     width: 1em;
     padding: 0.3rem;
-    cursor: pointer;
+}
+
+.traits .selection {
+    margin-bottom: 1rem;
 }
 
 .traits .selection .trait {
