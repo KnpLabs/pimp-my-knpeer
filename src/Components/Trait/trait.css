@@ -44,3 +44,6 @@
     border-radius: 50%;
     background: white;
 }
+.traits .selection .trait.selected {
+    border: 2px solid #000000a9;
+}
