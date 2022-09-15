@@ -45,71 +45,67 @@ const Menu = () => {
 
     return (
         <div className="menu">
-            <Trait
+            <Trait 
                 name="Visages"
                 selectedTrait={avatar.traits.face.componentName}
                 traits={faces}
-                setTrait={avatar.setFace}
+                setTrait={avatar.setFace} 
                 colors={faceColors}
                 setColor={avatar.setFaceColor}
-                selectedColor={avatar.traits.face.color}
             />
-            <Trait
+            <Trait 
                 name="Yeux"
                 selectedTrait={avatar.traits.eyes.componentName}
                 traits={eyes}
                 setTrait={avatar.setEyes}
             />
-            <Trait
+            <Trait 
                 name="Bouches"
                 selectedTrait={avatar.traits.mouth.componentName}
                 traits={mouths}
                 setTrait={avatar.setMouth}
             />
-            <Trait
+            <Trait 
                 name="Sourcils"
                 selectedTrait={avatar.traits.eyebrows.componentName}
                 traits={eyebrows}
                 setTrait={avatar.setEyebrows}
             />
-            <Trait
+            <Trait 
                 name="Cheveux"
                 selectedTrait={avatar.traits.hair.componentName}
                 traits={hairs}
-                setTrait={avatar.setHair}
+                setTrait={avatar.setHair} 
                 colors={hairColors}
                 setColor={avatar.setHairColor}
-                selectedColor={avatar.traits.hair.color}
             />
-            <Trait
+            <Trait 
                 name="Barbes"
                 selectedTrait={avatar.traits.beard.componentName}
                 traits={beard}
                 setTrait={avatar.setBeard}
             />
-            <Trait
+            <Trait 
                 name="Corps"
                 selectedTrait={avatar.traits.body.componentName}
                 traits={body}
-                setTrait={avatar.setBody}
+                setTrait={avatar.setBody} 
                 colors={bodyColors}
                 setColor={avatar.setBodyColor}
-                selectedColor={avatar.traits.body.color}
             />
-            <Trait
+            <Trait 
                 name="Accessoires"
                 selectedTrait={avatar.traits.accessories.componentName}
                 traits={accessories}
                 setTrait={avatar.setAccessories}
             />
-            <Trait
+            <Trait 
                 name="Fond"
                 selectedTrait={avatar.traits.background.componentName}
                 traits={background}
-                setTrait={avatar.setBackground}
+                setTrait={avatar.setBackground} 
                 colors={backgroundColors}
                 setColor={avatar.setBackgroundColor}
-                selectedColor={avatar.traits.background.color}
             />
         </div>
     )

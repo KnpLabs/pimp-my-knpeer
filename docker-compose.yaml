@@ -4,7 +4,7 @@ services:
   traefik:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile 
       target: traefik
     command:
       - '--api.dashboard=true'
@@ -21,7 +21,7 @@ services:
       - 'traefik.enable=true'
       - 'traefik.http.routers.traefik.rule=Host(`traefik.localhost`)'
       - 'traefik.http.routers.traefik.service=api@internal'
-
+  
   nginx:
     build:
       context: .
@@ -32,9 +32,9 @@ services:
       - 'traefik.http.routers.nginx.rule=Host(`front.localhost`) &&
         PathPrefix(`/Images`)'
     restart: unless-stopped
-
+   
   app:
-    build:
+    build: 
       context: .
       dockerfile: Dockerfile
       target: node

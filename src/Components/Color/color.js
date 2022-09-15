@@ -1,16 +1,11 @@
 import React from 'react'
 import './color.css'
 
-const Color = ({setColor, colors = [], selectedColor = null}) => {
+const Color = ({setColor, colors = []}) => {
     return (
         <div className="colors">
-            {colors.map(color =>
-                <div
-                    key={color}
-                    className={ `color ${color} ${selectedColor === color ? 'selected' : ''}`}
-                    onClick={() => setColor(color) }
-                >
-                </div>
+            {colors.map(color => 
+                <div key={color} className={ `color ${color}`} onClick={() => setColor(color) }></div>
             )}
         </div>
     )
