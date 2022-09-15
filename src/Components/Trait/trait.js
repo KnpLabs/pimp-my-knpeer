@@ -23,7 +23,7 @@ const Trait = ({name, setColor, setTrait, selectedTrait = null, traits = [], col
             </div>
 
             <div className="selection hidden">
-                {colors.length > 0 && <Color colors={colors} setColor={setColor} />}
+                {colors.length > 0 && <Color colors={colors} setColor={setColor} />})
                 {traits.map(Trait =>
                     <button
                         className="trait"

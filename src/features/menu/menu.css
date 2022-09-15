@@ -1,0 +1,32 @@
+.menu {
+    width: 30%;
+    height: calc(100vh - (2rem + 2rem));
+    padding: 2rem;
+    box-shadow: -2px 0 15px #dddddd;
+    overflow-y: scroll;
+}
+
+.menu .download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(90deg, rgba(255,107,87,1) 0%, rgba(255,47,45,1) 100%);
+}
+
+.menu .download .save {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 15px;
+}
+
+.menu .download.disabled {
+    cursor: not-allowed;
+}
