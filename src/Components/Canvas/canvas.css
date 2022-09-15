@@ -1,7 +1,5 @@
 .canvas {
-    width: 70%;
-    max-width: 900px;
-    position: relative;
+    height: 80%;
 }
 
 .canvas .avatar-trait {

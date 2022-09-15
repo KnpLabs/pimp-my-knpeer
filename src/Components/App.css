@@ -14,3 +14,9 @@
     left: 2rem;
     width: 20%;
 }
+
+.wrapper {
+    width: 70%;
+    max-width: 900px;
+    position: relative;
+}
