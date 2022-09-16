@@ -8,16 +8,16 @@ import { NavigationProvider } from './Context/navigationContext'
 
 const App = () => (
   <div className="app">
-    <NavigationProvider>
-        <AvatarProvider>
-            <img className="logo" src="/Images/logo.png" />
+    <AvatarProvider>
+        <NavigationProvider>
+            <img className="logo" src="/Images/logo.png" alt="logo"/>
             <div className='wrapper'>
                 <Canvas />
                 <Navigation />
             </div>
             <Menu />
-        </AvatarProvider>
-    </NavigationProvider>
+        </NavigationProvider>
+    </AvatarProvider>
   </div>
 )
 

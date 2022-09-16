@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './trait.css'
 import Color from '../Color/color'
 import { useAvatarContext } from '../Context/avatarContext'
+import { useNavigationContext } from '../Context/navigationContext'
 
-const toggleTrait = traitName => {
+const toggleTrait = (traitName, componentName, navigation) => {
     document.querySelectorAll(`.traits:not([data-is=${traitName}]) .selection`).forEach(
         selection => {selection.classList.add('hidden')}
     )
@@ -16,14 +17,19 @@ const toggleTrait = traitName => {
     document.querySelector(`[data-is=${traitName}] .chevron`).src = chevronSrc.includes('down')
         ? '/Images/Assets/chevron-up.svg'
         : '/Images/Assets/chevron-down.svg'
+
+    document.querySelector(`[data-is=${traitName}] .chevron`).src.includes('up')
+        ? navigation.setCurrentComponent(componentName)
+        : navigation.setCurrentComponent(null)
 }
 
-const Trait = ({name, setColor, setTrait, selectedColor = null, selectedTrait = null, traits = [], colors = []}) => {
+const Trait = ({name, componentName, setColor, setTrait, selectedColor = null, selectedTrait = null, traits = [], colors = []}) => {
     const avatar = useAvatarContext()
+    const navigation = useNavigationContext()
 
     return (
         <div className="traits" data-is={ name }>
-            <div className="header" onClick={() => toggleTrait(name)}>
+            <div className="header" onClick={() => toggleTrait(name, componentName, navigation)}>
                 <h3>{ name }</h3>
                 <img className="chevron" src="/Images/Assets/chevron-down.svg" />
             </div>
