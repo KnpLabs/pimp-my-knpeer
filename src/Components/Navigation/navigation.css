@@ -1,5 +1,5 @@
 .navigation {
-    height: 20%;
+    padding: 2rem;
     display: flex;
     justify-content: center;
 }
@@ -13,11 +13,12 @@
     align-items: center;
     justify-content: center;
     border: none;
+    cursor: pointer;
 }
-.navigation > button:hover {
+.navigation > button:hover:not(:disabled) {
     background: linear-gradient(0deg, rgba(255, 107, 87, 0.785) 0%, rgba(255, 48, 45, 0.736) 100%);
 }
-.navigation > button:active {
+.navigation > button:active:not(:disabled) {
     position:relative;
 	top:1px;
 }
@@ -26,6 +27,5 @@
     height: 70%;
 }
 .navigation > button:disabled {
-    position: unset;
     cursor: not-allowed;
 }

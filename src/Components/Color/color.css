@@ -7,10 +7,10 @@
 }
 
 .colors .color {
-    min-width: 50px;
+    width: 50px;
     height: 50px;
     margin: 0 5px;
-    border-radius: 100%;
+    border-radius: 50%;
     cursor: pointer;
     border: 2px solid transparent;
 }

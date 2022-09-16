@@ -1,12 +1,21 @@
 .canvas {
-    height: 80%;
+    position: relative;
+    height: 100%;
 }
 
 .canvas .avatar-trait {
     position: absolute;
-    top: 10rem;
-    left: 10rem;
-    right: 10rem;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.canvas .avatar-trait svg {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .canvas .avatar-trait svg.pink1 path#color {

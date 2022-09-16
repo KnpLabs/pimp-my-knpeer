@@ -14,6 +14,7 @@ const changeTrait = (navigation, avatar, isNext = false) => {
             currentTrait = trait
             currentTraitKey = key
         }
+
         return null
     })
 
@@ -48,3 +49,4 @@ const Navigation = () => {
 }
 
 export default Navigation;
+
