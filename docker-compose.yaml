@@ -39,7 +39,7 @@ services:
       dockerfile: Dockerfile
       target: node
     volumes:
-      - './src:/app/src'
+      - './:/app/'
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.app.rule=Host(`front.localhost`)'

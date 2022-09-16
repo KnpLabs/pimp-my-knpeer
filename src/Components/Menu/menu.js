@@ -1,4 +1,5 @@
 import React from 'react'
+import html2canvas from 'html2canvas'
 import './menu.css'
 import Trait from '../Trait/trait'
 import { useAvatarContext } from '../Context/avatarContext'
@@ -25,6 +26,41 @@ import {ReactComponent as Background1} from '../../Assets/Background/background1
 import {ReactComponent as Accessorie1} from '../../Assets/Accessories/accessorie1.svg'
 import {ReactComponent as Accessorie2} from '../../Assets/Accessories/accessorie2.svg'
 import {ReactComponent as Accessorie3} from '../../Assets/Accessories/accessorie3.svg'
+
+const downloadAvatar = () => {
+    const canvas = document.querySelector('.canvas')
+
+    if (canvas) {
+        html2canvas(canvas, {
+            onclone: (doc) => {
+                const clonedCanvas = doc.querySelector('.canvas')
+                clonedCanvas.style.width = '600px'
+                clonedCanvas.style.height = '600px'
+
+                const traits = clonedCanvas.getElementsByClassName('avatar-trait')
+
+                for (let i = 0; i < traits.length; i++) {
+                    traits[i].style.top = 0
+                    traits[i].style.bottom = 0
+                    traits[i].style.left = 0
+                    traits[i].style.right = 0
+
+                    const svg = traits[i].querySelector('svg')
+
+                    if(svg) {
+                        svg.style.height = '600px'
+                        svg.style.width = '600px'
+                    }
+                }
+            }
+        }).then(finalCanvas => {
+            const downloadLink = document.createElement('a');
+            downloadLink.download = 'pimp_my_knpeer.png';
+            downloadLink.href = finalCanvas.toDataURL('img/png');
+            downloadLink.click();
+        });
+    }
+}
 
 const Menu = () => {
     const avatar = useAvatarContext()
@@ -107,6 +143,15 @@ const Menu = () => {
                 colors={backgroundColors}
                 setColor={avatar.setBackgroundColor}
             />
+
+            <button
+                className={ `download ${avatar.isEmpty ? 'disabled' : ''}`}
+                disabled={ avatar.isEmpty }
+                onClick={ downloadAvatar }
+            >
+                <img className="save" src="/Images/Assets/save.svg" />
+                Télécharger mon avatar
+            </button>
         </div>
     )
 }

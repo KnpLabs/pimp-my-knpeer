@@ -49,6 +49,17 @@ export const AvatarProvider = ({children}) => {
             beard: {componentName: beard, color: hairColor},
             accessories: {componentName: accessories, color: null},
         },
+        isEmpty: !background
+            && !face
+            && !body
+            && !eyes
+            && !getCheeksNose(faceColor, face)
+            && !mouth
+            && !eyebrows
+            && !hair
+            && !beard
+            && !accessories
+        ,
         setFace,
         setEyes,
         setMouth,
