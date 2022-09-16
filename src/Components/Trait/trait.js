@@ -25,10 +25,24 @@ const Trait = ({name, setColor, setTrait, selectedTrait = null, traits = [], col
             <div className="selection hidden">
                 {colors.length > 0 && <Color colors={colors} setColor={setColor} />}
                 {traits.map(Trait =>
-                    <button className="trait" key={'button' + Trait.render.name} onClick={() => setTrait(
-                        selectedTrait === Trait.render.name ? null : Trait.render.name
-                    ) }>
+                    <button
+                        className="trait"
+                        key={'button' + Trait.render.name}
+                        onClick={() => setTrait(Trait.render.name) }
+                    >
                         <Trait />
+
+                        {selectedTrait === Trait.render.name
+                            ? <img
+                                className="remove"
+                                src="/Images/Assets/cross.svg"
+                                onClick={e => {
+                                    e.stopPropagation()
+                                    setTrait(null)
+                                }}
+                            />
+                            : null
+                        }
                     </button>
                 )}
             </div>
