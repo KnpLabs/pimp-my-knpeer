@@ -6,29 +6,27 @@ import { useAvatarContext } from '../Context/avatarContext'
 const changeTrait = (navigation, avatar, isNext = false) => {
     let currentTrait = null
     let currentTraitKey = null
-    console.log(navigation.currentComponent)
+
+    if (navigation.currentComponent === null) return
 
     Object.entries(avatar.getters).filter(([key, trait]) => {
-        console.log('key' . key)
-        console.log(trait.componentName)
         if (trait.componentName === navigation.currentComponent) {
             currentTrait = trait
             currentTraitKey = key
         }
+        return null
     })
-
-    // console.log(currentTraitKey)
-    // console.log(currentTrait)
 
     if (currentTrait && currentTraitKey) {
         const traitList = avatar.traits[currentTraitKey]
-        const currentIndex = traitList.indexOf(currentTrait)
+        const currentIndex = traitList.indexOf(traitList.filter(trait => trait.render.name === currentTrait.componentName)[0])
         const index = isNext
-            ? currentIndex === traitList.length ? 0 : currentIndex + 1
-            : currentIndex === 0 ? traitList.length : currentIndex - 1
+            ? currentIndex === (traitList.length - 1) ? 0 : currentIndex + 1
+            : currentIndex === 0 ? (traitList.length - 1) : currentIndex - 1
         const nextTrait = traitList[index]
 
-        avatar.setters[currentTraitKey](nextTrait)
+        avatar.setters[currentTraitKey](nextTrait.render.name)
+        navigation.setCurrentComponent(nextTrait.render.name)
     }
 
 }
@@ -39,10 +37,10 @@ const Navigation = () => {
 
     return (
         <div className='navigation'>
-            <button onClick={() => changeTrait(navigation, avatar)}>
+            <button onClick={() => changeTrait(navigation, avatar)} disabled={!navigation.currentComponent}>
                 <img src="/Images/Assets/left-arrow.svg" alt='previous'/>
             </button>
-            <button onClick={() => changeTrait(navigation, avatar, true)}>
+            <button onClick={() => changeTrait(navigation, avatar, true)} disabled={!navigation.currentComponent}>
                 <img src="/Images/Assets/right-arrow.svg" alt='next'/>
             </button>
         </div>

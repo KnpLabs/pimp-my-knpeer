@@ -25,3 +25,7 @@
     width: 70%;
     height: 70%;
 }
+.navigation > button:disabled {
+    position: unset;
+    cursor: not-allowed;
+}

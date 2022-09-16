@@ -2,13 +2,14 @@ import './trait.css'
 import Color from '../Color/color'
 import { useNavigationContext } from '../Context/navigationContext'
 
-const toggleTrait = (traitName, componentName, navigation) => {
+const toggleTrait = (traitName, navigation) => {
     document.querySelectorAll(`.traits:not([data-is=${traitName}]) .selection`).forEach(
         selection => {selection.classList.add('hidden')}
     )
     document.querySelectorAll(`.traits:not([data-is=${traitName}]) .chevron`).forEach(
         chevron => {chevron.setAttribute('src', '/Images/Assets/chevron-down.svg')}
     )
+    navigation.setCurrentComponent(null)
 
     document.querySelector(`[data-is=${traitName}] .selection`).classList.toggle('hidden')
     const chevronSrc = document.querySelector(`[data-is=${traitName}] .chevron`).src
@@ -17,18 +18,12 @@ const toggleTrait = (traitName, componentName, navigation) => {
         : '/Images/Assets/chevron-down.svg'
 }
 
-const setNavigation = (navigation, traitName, componentName) => {
-    document.querySelector(`[data-is=${traitName}] .chevron`).src.includes('up')
-        ? navigation.setCurrentComponent(componentName)
-        : navigation.setCurrentComponent(null)
-}
-
-const Trait = ({name, componentName, setColor, setTrait, selectedColor = null, selectedTrait = null, traits = [], colors = []}) => {
+const Trait = ({name, setColor, setTrait, selectedColor = null, selectedTrait = null, traits = [], colors = []}) => {
     const navigation = useNavigationContext()
 
     return (
         <div className="traits" data-is={ name }>
-            <div className="header" onClick={() => toggleTrait(name, componentName, navigation)}>
+            <div className="header" onClick={() => toggleTrait(name, navigation)}>
                 <h3>{ name }</h3>
                 <img className="chevron" src="/Images/Assets/chevron-down.svg" alt="chevron"/>
             </div>
@@ -40,8 +35,8 @@ const Trait = ({name, componentName, setColor, setTrait, selectedColor = null, s
                         className={`trait ${selectedTrait === Trait.render.name ? 'selected' : ''}`}
                         key={'button' + Trait.render.name}
                         onClick={() => {
-                            setTrait(selectedTrait === Trait.render.name ? null : Trait.render.name)
-                            setNavigation(navigation, Trait.render.name, name)
+                            setTrait(Trait.render.name)
+                            navigation.setCurrentComponent(Trait.render.name)
                         }}
                     >
                         <Trait />
@@ -53,7 +48,9 @@ const Trait = ({name, componentName, setColor, setTrait, selectedColor = null, s
                                 onClick={e => {
                                     e.stopPropagation()
                                     setTrait(null)
+                                    navigation.setCurrentComponent(null)
                                 }}
+                                alt="remove"
                             />
                             : null
                         }

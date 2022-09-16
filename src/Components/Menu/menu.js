@@ -46,7 +46,6 @@ const Menu = () => {
         <div className="menu">
             <Trait
                 name="Visages"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.face)}
                 selectedTrait={avatar.getters.face.componentName}
                 traits={avatar.traits.face}
                 setTrait={avatar.setters.face}
@@ -56,28 +55,24 @@ const Menu = () => {
             />
             <Trait
                 name="Yeux"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.eyes)}
                 selectedTrait={avatar.getters.eyes.componentName}
                 traits={avatar.traits.eyes}
                 setTrait={avatar.setters.eyes}
             />
             <Trait
                 name="Bouches"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.mouth)}
                 selectedTrait={avatar.getters.mouth.componentName}
                 traits={avatar.traits.mouth}
                 setTrait={avatar.setters.mouth}
             />
             <Trait
                 name="Sourcils"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.eyebrows)}
                 selectedTrait={avatar.getters.eyebrows.componentName}
                 traits={avatar.traits.eyebrows}
                 setTrait={avatar.setters.eyebrows}
             />
             <Trait
                 name="Cheveux"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.hair)}
                 selectedTrait={avatar.getters.hair.componentName}
                 traits={avatar.traits.hair}
                 setTrait={avatar.setters.hair}
@@ -87,14 +82,12 @@ const Menu = () => {
             />
             <Trait
                 name="Barbes"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.beard)}
                 selectedTrait={avatar.getters.beard.componentName}
                 traits={avatar.traits.beard}
                 setTrait={avatar.setters.beard}
             />
             <Trait
                 name="Corps"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.body)}
                 selectedTrait={avatar.getters.body.componentName}
                 traits={avatar.traits.body}
                 setTrait={avatar.setters.body}
@@ -104,14 +97,12 @@ const Menu = () => {
             />
             <Trait
                 name="Accessoires"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.accessories)}
                 selectedTrait={avatar.getters.accessories.componentName}
                 traits={avatar.traits.accessories}
                 setTrait={avatar.setters.accessories}
             />
             <Trait
                 name="Fond"
-                componentName={Object.keys(avatar.traits).find(key => avatar.traits[key] === avatar.traits.background)}
                 selectedTrait={avatar.getters.background.componentName}
                 traits={avatar.traits.background}
                 setTrait={avatar.setters.background}
@@ -125,7 +116,7 @@ const Menu = () => {
                 disabled={ avatar.isEmpty }
                 onClick={ downloadAvatar }
             >
-                <img className="save" src="/Images/Assets/save.svg" />
+                <img className="save" src="/Images/Assets/save.svg" alt="save"/>
                 Télécharger mon avatar
             </button>
         </div>
