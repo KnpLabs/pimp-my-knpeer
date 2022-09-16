@@ -9,6 +9,7 @@ const changeTrait = (navigation, avatar, isNext = false) => {
     console.log(navigation.currentComponent)
 
     Object.entries(avatar.getters).filter(([key, trait]) => {
+        console.log('key' . key)
         console.log(trait.componentName)
         if (trait.componentName === navigation.currentComponent) {
             currentTrait = trait
@@ -16,8 +17,8 @@ const changeTrait = (navigation, avatar, isNext = false) => {
         }
     })
 
-    console.log(currentTraitKey)
-    console.log(currentTrait)
+    // console.log(currentTraitKey)
+    // console.log(currentTrait)
 
     if (currentTrait && currentTraitKey) {
         const traitList = avatar.traits[currentTraitKey]

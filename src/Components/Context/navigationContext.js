@@ -7,8 +7,6 @@ export const NavigationProvider = ({children}) => {
     const [currentComponent, setCurrentComponent] = useState(null)
 
     const navigation = {
-        selectedTrait,
-        setSelectedTrait,
         currentComponent,
         setCurrentComponent,
     }
