@@ -7,6 +7,7 @@ const getComponentByName = (name, traits) => {
         ...traits.face,
         ...traits.eyes,
         ...traits.mouth,
+        ...traits.hair,
         ...traits.eyebrows,
         ...traits.body,
         ...traits.background,

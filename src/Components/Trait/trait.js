@@ -18,7 +18,7 @@ const toggleTrait = (traitName, navigation) => {
         : '/Images/Assets/chevron-down.svg'
 }
 
-const Trait = ({name, setColor, setTrait, selectedColor = null, selectedTrait = null, traits = [], colors = []}) => {
+const Trait = ({name, setColor, setTrait = null, selectedColor = null, selectedTrait = null, traits = [], colors = [], setBackHair = null, setFrontHair = null}) => {
     const navigation = useNavigationContext()
 
     return (
@@ -35,8 +35,26 @@ const Trait = ({name, setColor, setTrait, selectedColor = null, selectedTrait = 
                         className={`trait ${selectedTrait === Trait.render.name ? 'selected' : ''}`}
                         key={'button' + Trait.render.name}
                         onClick={() => {
-                            setTrait(Trait.render.name)
-                            navigation.setCurrentComponent(Trait.render.name)
+                            console.log(Trait.render.name)
+                            const frontHair = /Front/
+                            const backHair = /Back/
+                            const frontHairmatch = Trait.render.name.match(frontHair)
+                            const backHairmatch = Trait.render.name.match(backHair)
+                            if (null !== setBackHair && backHairmatch instanceof Array){
+                                setBackHair(Trait.render.name)
+                                navigation.setCurrentComponent(Trait.render.name)
+                            }
+
+                            if (null !== setFrontHair && frontHairmatch instanceof Array) {
+                                setFrontHair(Trait.render.name)
+                                navigation.setCurrentComponent(Trait.render.name)
+                            }
+
+                            if (null == setBackHair && null == setFrontHair) {
+
+                                setTrait(Trait.render.name)
+                                navigation.setCurrentComponent(Trait.render.name)
+                            }
                         }}
                     >
                         <Trait />

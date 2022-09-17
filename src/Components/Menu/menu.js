@@ -73,12 +73,13 @@ const Menu = () => {
             />
             <Trait
                 name="Cheveux"
-                selectedTrait={avatar.getters.hair.componentName}
+                selectedTrait={avatar.getters.frontHair.componentName}
                 traits={avatar.traits.hair}
-                setTrait={avatar.setters.hair}
+                setFrontHair={avatar.setters.frontHair}
+                setBackHair={avatar.setters.backHair}
                 colors={avatar.traits.hairColors}
                 setColor={avatar.setters.hairColor}
-                selectedColor={avatar.getters.hair.color}
+                selectedColor={avatar.getters.frontHair.color}
             />
             <Trait
                 name="Barbes"

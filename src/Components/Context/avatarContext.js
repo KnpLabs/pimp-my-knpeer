@@ -25,6 +25,25 @@ import {ReactComponent as Accessorie3} from '../../Assets/Accessories/accessorie
 import {ReactComponent as CheeksNose1} from '../../Assets/CheeksNose/cheeksNose1.svg'
 import {ReactComponent as CheeksNose2} from '../../Assets/CheeksNose/cheeksNose2.svg'
 import {ReactComponent as CheeksNose3} from '../../Assets/CheeksNose/cheeksNose3.svg'
+import {ReactComponent as FrontHair1} from '../../Assets/Hair/Front/frontHair1.svg'
+import {ReactComponent as FrontHair2} from '../../Assets/Hair/Front/frontHair2.svg'
+import {ReactComponent as FrontHair3} from '../../Assets/Hair/Front/frontHair3.svg'
+import {ReactComponent as FrontHair4} from '../../Assets/Hair/Front/frontHair4.svg'
+import {ReactComponent as FrontHair5} from '../../Assets/Hair/Front/frontHair5.svg'
+import {ReactComponent as FrontHair6} from '../../Assets/Hair/Front/frontHair6.svg'
+import {ReactComponent as FrontHair7} from '../../Assets/Hair/Front/frontHair7.svg'
+import {ReactComponent as FrontHair8} from '../../Assets/Hair/Front/frontHair8.svg'
+import {ReactComponent as FrontHair9} from '../../Assets/Hair/Front/frontHair9.svg'
+import {ReactComponent as FrontHair10} from '../../Assets/Hair/Front/frontHair10.svg'
+import {ReactComponent as FrontHair11} from '../../Assets/Hair/Front/frontHair11.svg'
+import {ReactComponent as FrontHair12} from '../../Assets/Hair/Front/frontHair12.svg'
+import {ReactComponent as FrontHair13} from '../../Assets/Hair/Front/frontHair13.svg'
+import {ReactComponent as FrontHair14} from '../../Assets/Hair/Front/frontHair14.svg'
+import {ReactComponent as FrontHair15} from '../../Assets/Hair/Front/frontHair15.svg'
+import {ReactComponent as BackHair1} from '../../Assets/Hair/Back/backHair1.svg'
+import {ReactComponent as BackHair2} from '../../Assets/Hair/Back/backHair2.svg'
+import {ReactComponent as BackHair3} from '../../Assets/Hair/Back/backHair3.svg'
+import {ReactComponent as BackHair4} from '../../Assets/Hair/Back/backHair4.svg'
 
 const getCheeksNose = (faceColor, face) => {
     if (face !== null && (faceColor === 'pink1' || faceColor === 'pink2')) {
@@ -53,7 +72,8 @@ export const AvatarProvider = ({children}) => {
     const [hairColor, setHairColor] = useState(null)
     const [accessories, setAccessories] = useState(null)
     const [beard, setBeard] = useState(null)
-    const [hair, setHair] = useState(null)
+    const [frontHair, setFrontHair] = useState(null)
+    const [backHair, setBackHair] = useState(null)
     const [background, setBackground] = useState(null)
     const [faceColor, setFaceColor] = useState('pink1')
     const [bodyColor, setBodyColor] = useState(null)
@@ -62,13 +82,14 @@ export const AvatarProvider = ({children}) => {
     const avatar = {
         getters: {
             background: {componentName: background, color: backgroundColor},
+            backHair: {componentName: backHair, color: hairColor},
             face: {componentName: face, color: faceColor},
             body: {componentName: body, color: bodyColor},
             eyes: {componentName: eyes, color: null},
             cheeksNose: {componentName: getCheeksNose(faceColor, face), color: null},
             mouth: {componentName: mouth, color: null},
             eyebrows: {componentName: eyebrows, color: hairColor},
-            hair: {componentName: hair, color: hairColor},
+            frontHair: {componentName: frontHair, color: hairColor},
             beard: {componentName: beard, color: hairColor},
             accessories: {componentName: accessories, color: null},
         },
@@ -80,7 +101,8 @@ export const AvatarProvider = ({children}) => {
             eyebrows: setEyebrows,
             accessories: setAccessories,
             beard: setBeard,
-            hair: setHair,
+            backHair: setBackHair,
+            frontHair: setFrontHair,
             background: setBackground,
             faceColor: setFaceColor,
             hairColor: setHairColor,
@@ -95,7 +117,27 @@ export const AvatarProvider = ({children}) => {
             eyebrows: [Eyebrows1, Eyebrows2, Eyebrows3, Eyebrows4, Eyebrows5],
             accessories: [Accessorie1, Accessorie2, Accessorie3],
             beard: [],
-            hair: [],
+            hair: [
+                FrontHair1,
+                FrontHair2,
+                FrontHair3,
+                FrontHair4,
+                FrontHair5,
+                FrontHair6,
+                FrontHair7,
+                FrontHair8,
+                FrontHair9,
+                FrontHair10,
+                FrontHair11,
+                FrontHair12,
+                FrontHair13,
+                FrontHair14,
+                FrontHair15,
+                BackHair1,
+                BackHair2,
+                BackHair3,
+                BackHair4,
+            ],
             background: [Background1],
             faceColors: ['pink1', 'pink2', 'beige1', 'beige2', 'brown1', 'brown2'],
             hairColors: ['blond', 'ginger', 'red', 'brown', 'black', 'grey'],
@@ -108,9 +150,10 @@ export const AvatarProvider = ({children}) => {
             && !body
             && !eyes
             && !getCheeksNose(faceColor, face)
+            && !frontHair
+            && !backHair
             && !mouth
             && !eyebrows
-            && !hair
             && !beard
             && !accessories
         ,
